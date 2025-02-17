@@ -3,6 +3,7 @@ import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import CreatePost from "./pages/CreatePost";
 
 function App() {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -23,6 +24,9 @@ function App() {
                         <ul className="navbar-nav ms-auto">
                             {user ? (
                                 <>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" to="/create-post">Create Post</Link>
+                                    </li>
                                     <li className="nav-item">
                                         <span className="nav-link">Hello, {user.name}</span>
                                     </li>
@@ -49,6 +53,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
+                <Route path="/create-post" element={<CreatePost />} />
             </Routes>
         </div>
     );
