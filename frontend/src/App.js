@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import CreatePost from "./pages/CreatePost";
+import PostDetail from "./pages/PostDetail";
+import EditPost from "./pages/EditPost";
 
 function App() {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -54,6 +56,8 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/create-post" element={<CreatePost />} />
+                <Route path="/post/:id" element={<PostDetail />} />
+                <Route path="/edit-post/:id" element={<EditPost />} />
             </Routes>
         </div>
     );
